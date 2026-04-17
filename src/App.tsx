@@ -1,220 +1,239 @@
-import { ArtDecoSunburst } from "@/components/ArtDecoSunburst";
-import { ArtDecoDivider } from "@/components/ArtDecoDivider";
-import { ServiceCard } from "@/components/ServiceCard";
+import Icon from "@/components/ui/icon";
 import { CTAForm } from "@/components/CTAForm";
 
 function App() {
   return (
-    <main className="min-h-screen bg-background dark">
+    <main className="min-h-screen bg-background">
+
+      {/* Navigation */}
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+              <Icon name="Scale" size={16} className="text-white" />
+            </div>
+            <span className="font-serif text-lg font-semibold text-foreground">Аудит·Налоги·Право</span>
+          </div>
+          <a
+            href="#contact"
+            className="hidden md:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+          >
+            Получить консультацию
+          </a>
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-        <ArtDecoSunburst />
-
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          {/* Decorative top element */}
-          <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-px bg-primary" />
-              <div className="w-3 h-3 rotate-45 border border-primary" />
-              <div className="w-16 h-px bg-primary" />
-            </div>
-          </div>
-
-          <p className="text-primary tracking-[0.3em] uppercase text-sm mb-6">Профессиональный аудит с 2012 года</p>
-
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-tight">
-            <span className="text-gold-gradient">Аудит·</span>Налоги·Право
-          </h1>
-
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12">
-            Профессиональная защита вашего бизнеса: аудит, налоговый консалтинг и юридическое сопровождение на Дальнем Востоке.
-          </p>
-
-          {/* Decorative bottom element */}
-          <div className="flex justify-center">
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary to-primary" />
-              <div className="w-2 h-2 rotate-45 bg-primary" />
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
-            <path
-              d="M12 5v14M5 12l7 7 7-7"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-24 px-6">
+      <section className="py-20 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <ArtDecoDivider variant="stepped" />
-
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-primary tracking-[0.2em] uppercase text-sm mb-4">Наш подход</p>
-              <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight text-balance">
-                Надёжность, проверенная практикой
-              </h2>
+              <div className="inline-flex items-center gap-2 bg-accent text-primary text-sm font-medium px-4 py-2 rounded-full mb-6">
+                <Icon name="Award" size={14} />
+                <span>Профессиональный аудит с 2012 года</span>
+              </div>
+
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
+                Надёжная защита <span className="text-accent-gradient">вашего бизнеса</span>
+              </h1>
+
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Аудит, налоговый консалтинг и юридическое сопровождение. Помогаем предпринимателям Дальнего Востока работать уверенно и без рисков.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3.5 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Получить консультацию
+                  <Icon name="ArrowRight" size={18} />
+                </a>
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3.5 rounded-lg font-medium hover:bg-accent transition-colors"
+                >
+                  Наши услуги
+                </a>
+              </div>
             </div>
-            <div className="space-y-6">
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Мы сопровождаем бизнес комплексно: от обязательного аудита и налоговой оптимизации до защиты интересов в судах и проверках. Наши специалисты — практики с многолетним опытом работы в условиях Дальнего Востока.
-              </p>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Каждый клиент получает персональную команду экспертов: аудиторов, налоговых консультантов и юристов, которые работают слаженно, чтобы вы были защищены на всех уровнях.
-              </p>
+
+            {/* Stats panel */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { value: "10+", label: "лет на рынке", icon: "Clock" },
+                { value: "500+", label: "довольных клиентов", icon: "Users" },
+                { value: "100%", label: "конфиденциальность", icon: "Shield" },
+                { value: "0", label: "проигранных споров с ФНС", icon: "CheckCircle" },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-card rounded-2xl p-6 border border-border shadow-sm">
+                  <Icon name={stat.icon as "Clock"} size={24} className="text-primary mb-3" />
+                  <p className="font-serif text-3xl font-bold text-foreground mb-1">{stat.value}</p>
+                  <p className="text-muted-foreground text-sm">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-6 bg-card/50">
+      <section id="services" className="py-20 px-6 bg-secondary">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-primary tracking-[0.2em] uppercase text-sm mb-4">Наши услуги</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground text-balance">Комплексная защита бизнеса</h2>
+          <div className="text-center mb-14">
+            <p className="text-primary font-medium text-sm uppercase tracking-widest mb-3">Что мы делаем</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">Комплексная защита бизнеса</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Три направления, которые работают вместе — так вы получаете полную защиту с любой стороны.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <ServiceCard
-              title="Аудит"
-              description="Обязательный и инициативный аудит бухгалтерской отчётности. Проверка достоверности данных, выявление рисков и рекомендации по их устранению."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-12 h-12">
-                  <path d="M9 12l2 2 4-4" />
-                  <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" />
-                </svg>
-              }
-            />
-            <ServiceCard
-              title="Налоговый консалтинг"
-              description="Налоговое планирование, оптимизация налоговой нагрузки, сопровождение налоговых проверок, споры с ИФНС и защита в досудебном порядке."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-12 h-12">
-                  <rect x="2" y="5" width="20" height="14" rx="2" />
-                  <path d="M2 10h20" />
-                  <path d="M6 15h4M14 15h4" />
-                </svg>
-              }
-            />
-            <ServiceCard
-              title="Юридическое сопровождение"
-              description="Правовая экспертиза договоров, представление интересов в арбитраже, корпоративные споры, регистрация и ликвидация компаний."
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-12 h-12">
-                  <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" />
-                  <path d="M12 22V12M3 7l9 5 9-5" />
-                </svg>
-              }
-            />
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "ClipboardCheck",
+                title: "Аудит",
+                color: "bg-orange-50",
+                iconColor: "text-orange-500",
+                items: [
+                  "Обязательный аудит",
+                  "Инициативный аудит",
+                  "Аудит отчётности по МСФО",
+                  "Налоговый аудит",
+                ],
+              },
+              {
+                icon: "Calculator",
+                title: "Налоговый консалтинг",
+                color: "bg-blue-50",
+                iconColor: "text-blue-500",
+                items: [
+                  "Налоговое планирование",
+                  "Сопровождение проверок",
+                  "Споры с ИФНС",
+                  "Оптимизация налоговой нагрузки",
+                ],
+              },
+              {
+                icon: "Scale",
+                title: "Юридическое сопровождение",
+                color: "bg-green-50",
+                iconColor: "text-green-500",
+                items: [
+                  "Корпоративные споры",
+                  "Арбитражные дела",
+                  "Экспертиза договоров",
+                  "Регистрация и ликвидация",
+                ],
+              },
+            ].map((service) => (
+              <div key={service.title} className="bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow">
+                <div className={`w-12 h-12 rounded-xl ${service.color} flex items-center justify-center mb-6`}>
+                  <Icon name={service.icon as "Scale"} size={24} className={service.iconColor} />
+                </div>
+                <h3 className="font-serif text-xl text-foreground mb-4">{service.title}</h3>
+                <ul className="space-y-2.5">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-muted-foreground text-sm">
+                      <Icon name="Check" size={14} className="text-primary flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <ArtDecoDivider variant="fan" />
-
-          <div className="grid grid-cols-3 gap-8 text-center py-12">
+      {/* Why Us Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="font-serif text-5xl md:text-6xl text-gold-gradient mb-3">10+</p>
-              <p className="text-muted-foreground uppercase tracking-[0.15em] text-sm">лет на рынке</p>
-            </div>
-            <div>
-              <p className="font-serif text-5xl md:text-6xl text-gold-gradient mb-3">500+</p>
-              <p className="text-muted-foreground uppercase tracking-[0.15em] text-sm">клиентов</p>
-            </div>
-            <div>
-              <p className="font-serif text-5xl md:text-6xl text-gold-gradient mb-3">100%</p>
-              <p className="text-muted-foreground uppercase tracking-[0.15em] text-sm">конфиденциальность</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-24 px-6 bg-card/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative text-center py-12">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-primary/20 font-serif text-9xl leading-none">
-              &ldquo;
-            </div>
-
-            <blockquote className="relative z-10">
-              <p className="font-serif text-2xl md:text-3xl text-foreground leading-relaxed italic mb-8">
-                Благодаря специалистам компании мы успешно прошли выездную налоговую проверку и сэкономили значительные средства. Профессионализм и внимание к деталям — на высшем уровне.
+              <p className="text-primary font-medium text-sm uppercase tracking-widest mb-3">Почему выбирают нас</p>
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6 leading-tight">
+                Мы знаем специфику Дальнего Востока
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Наши специалисты работают в регионе более 10 лет. Мы понимаем местную специфику, знаем инспекторов и знаем, как защитить ваш бизнес эффективно.
               </p>
-              <footer className="text-muted-foreground">
-                <span className="text-primary">—</span> Руководитель строительной компании,{" "}
-                <span className="text-primary">Хабаровск</span>
-              </footer>
-            </blockquote>
+
+              <div className="space-y-5">
+                {[
+                  { icon: "UserCheck", text: "Персональный менеджер для каждого клиента" },
+                  { icon: "Clock", text: "Ответ на запрос в течение 2 часов" },
+                  { icon: "Lock", text: "Полная конфиденциальность данных" },
+                  { icon: "Banknote", text: "Фиксированная стоимость без скрытых доплат" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon as "Clock"} size={18} className="text-primary" />
+                    </div>
+                    <p className="text-foreground">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Testimonial */}
+            <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+              <div className="flex gap-1 mb-6">
+                {[1,2,3,4,5].map(i => (
+                  <Icon key={i} name="Star" size={18} className="text-primary fill-primary" />
+                ))}
+              </div>
+              <blockquote>
+                <p className="text-foreground text-lg leading-relaxed mb-6 italic">
+                  «Благодаря специалистам компании мы успешно прошли выездную налоговую проверку. Всё чётко, профессионально и в срок. Теперь работаем только с ними.»
+                </p>
+                <footer className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+                    <Icon name="User" size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Руководитель строительной компании</p>
+                    <p className="text-muted-foreground text-sm">Хабаровск</p>
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <ArtDecoSunburst />
-        </div>
+      <section id="contact" className="py-20 px-6 bg-secondary">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-primary font-medium text-sm uppercase tracking-widest mb-3">Бесплатная консультация</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">Разберём вашу ситуацию</h2>
+          <p className="text-muted-foreground mb-10">
+            Оставьте заявку — эксперт свяжется с вами в течение рабочего дня и ответит на все вопросы бесплатно.
+          </p>
 
-        <div className="max-w-3xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <ArtDecoDivider variant="chevron" />
-            <p className="text-primary tracking-[0.2em] uppercase text-sm mb-4">Получить консультацию</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 text-balance">Защитите свой бизнес</h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Оставьте заявку, и наш эксперт свяжется с вами в течение рабочего дня для бесплатной первичной консультации.
-            </p>
-          </div>
-
-          <div className="relative p-8 md:p-12 border border-border">
-            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-primary" />
-            <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-primary" />
-            <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-primary" />
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-primary" />
-
+          <div className="bg-card rounded-2xl p-8 border border-border shadow-sm text-left">
             <CTAForm />
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-px bg-primary" />
-              <span className="font-serif text-xl text-foreground">ООО «Аудит·Налоги·Право»</span>
-              <div className="w-12 h-px bg-primary" />
+      <footer className="py-10 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
+              <Icon name="Scale" size={13} className="text-white" />
             </div>
-
-            <div className="flex flex-col md:flex-row items-center gap-6 text-muted-foreground text-sm">
-              <span>г. Хабаровск</span>
-              <span className="hidden md:block text-primary">·</span>
-              <a href="tel:+74212000000" className="hover:text-primary transition-colors">+7 (4212) ХХХ-ХХ-ХХ</a>
-              <span className="hidden md:block text-primary">·</span>
-              <a href="mailto:info@аудитдв.рф" className="hover:text-primary transition-colors">info@аудитдв.рф</a>
-            </div>
-
-            <p className="text-muted-foreground/50 text-xs tracking-widest uppercase">
-              © {new Date().getFullYear()} ООО «Аудит-Налоги-Право». Все права защищены.
-            </p>
+            <span className="font-serif text-foreground">ООО «Аудит-Налоги-Право»</span>
           </div>
+          <div className="flex flex-col md:flex-row items-center gap-4 text-muted-foreground text-sm">
+            <span>г. Хабаровск</span>
+            <a href="mailto:info@аудитдв.рф" className="hover:text-primary transition-colors">info@аудитдв.рф</a>
+          </div>
+          <p className="text-muted-foreground/60 text-xs">© {new Date().getFullYear()} Все права защищены</p>
         </div>
       </footer>
+
     </main>
   );
 }
